@@ -1,0 +1,15 @@
+<h1>Mushroom List</h1>
+<input type="text" placeholder="Mushroom name" ng-model = "searchList">
+    Edible<input type="radio" value="edible" name="mushrooms" ng-model="searchList" ng-value="{{value.edible = true}}">
+    Poisonous<input type="radio" value="poisonous" name="mushrooms" ng-model="searchList" ng-value="{{value.edible = false}}">
+    <ul>
+      <div>
+        <li ng-repeat="mushroom in mushrooms |filter : searchList" class="liststyle">
+          <div ng-repeat="(key, value ) in mushroom ">{{value.description}}
+            <div> Edible : {{value.edible}}</div>
+          </div>
+
+        </li>
+
+      </div>
+    </ul>
